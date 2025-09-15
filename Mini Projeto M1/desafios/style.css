@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos base (Mobile First) */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header e Navegação */
+header {
+    background: #8B4513;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    padding: 0.5rem;
+}
+
+nav a:hover {
+    background: rgba(255,255,255,0.2);
+    border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: #f9f9f9;
+}
+
+.hero h1 {
+    color: #8B4513;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.hero img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 1rem 0;
+}
+
+/* Seção de Receitas */
+.receitas {
+    padding: 2rem 1rem;
+}
+
+.receita-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.info-receita span {
+    background: #8B4513;
+    color: white;
+    padding: 0.3rem 0.5rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+}
+
+/* MEDIA QUERIES - Responsivo */
+
+/* Tablet */
+@media (min-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .hero {
+        padding: 3rem 2rem;
+    }
+    
+    .receitas {
+        padding: 2rem;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    body {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    nav a {
+        margin: 0 2rem;
+    }
+    
+    .receita-card {
+        max-width: 800px;
+        margin: 2rem auto;
+    }
+}
