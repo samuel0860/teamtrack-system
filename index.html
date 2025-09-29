@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskMaster Squad</title>
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- CSS da animação de carregamento -->
+    <link rel="stylesheet" href="assets/loader.css" />
+  </head>
+  <body>
+    <!-- Tela de carregamento -->
+    <div id="loader">
+      <div class="spinner"></div>
+      <p>Carregando...</p>
+    </div>
+
+    <!-- Container principal -->
+    <div class="container hidden" id="app">
+      <h1>📌 TaskMaster Squad</h1>
+
+      <!-- Seção de usuários -->
+      <section>
+        <h2>👤 Usuários</h2>
+        <form id="userForm">
+          <input
+            type="text"
+            id="username"
+            placeholder="Nome do usuário"
+            required
+          />
+          <button type="submit">Adicionar</button>
+        </form>
+        <ul id="userList"></ul>
+      </section>
+
+      <!-- Seção de tarefas -->
+      <section>
+        <h2>✅ Tarefas</h2>
+        <form id="taskForm">
+          <input
+            type="text"
+            id="taskName"
+            placeholder="Descrição da tarefa"
+            required
+          />
+          <button type="submit">Criar</button>
+        </form>
+        <ul id="taskList"></ul>
+      </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="Classe Usuário/usuario.js"></script>
+    <script src="Classe Tarefa/tarefa.js"></script>
+    <script src="Classe principal que orquestra o sistema/gerenciador.js"></script>
+    <script src="Elemento visual/ui.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
