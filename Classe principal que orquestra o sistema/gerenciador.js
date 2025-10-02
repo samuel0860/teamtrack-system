@@ -45,16 +45,6 @@ import { Produto } from "../Classe Produto/produto.js";
 export class Gerenciador {
   constructor() {
     this.produtos = [];
-  }
-
-  adicionarProduto(nome, quantidade, estoqueMinimo) {
-    const id = this.produtos.length + 1;
-    const produto = new Produto(id, nome, quantidade, estoqueMinimo);
-    this.produtos.push(produto);
-    return produto;
-  }
-
-  produtosEmAlerta() {
-    return this.produtos.filter((produto) => produto.emAlerta());
+    // Métodos de manipulação serão implementados futuramente por outra pessoa
   }
 }
