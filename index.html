@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Gestor de Estoque — TeamTrack</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google Font opcional -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Loader -->
+    <div id="loader" aria-hidden="false">
+      <div class="spinner"></div>
+      <p>Carregando sistema...</p>
+    </div>
+
+    <!-- App -->
+    <main class="app container hidden" id="app" role="main">
+      <header class="app-header">
+        <div class="brand">
+          <h1>📦 TeamTrack</h1>
+          <p class="tagline">Gestor de Estoque com Alerta Inteligente</p>
+        </div>
+
+        <nav class="controls">
+          <button id="exportBtn" class="btn ghost">Exportar</button>
+          <button id="importBtn" class="btn ghost">Importar</button>
+        </nav>
+      </header>
+
+      <section class="panel">
+        <form id="productForm" class="form-grid" aria-label="Adicionar produto">
+          <input
+            id="productName"
+            type="text"
+            placeholder="Nome do produto"
+            required
+          />
+          <input
+            id="productQty"
+            type="number"
+            placeholder="Quantidade"
+            required
+            min="0"
+          />
+          <input
+            id="productMin"
+            type="number"
+            placeholder="Estoque mínimo"
+            required
+            min="0"
+          />
+          <div class="form-actions">
+            <button type="submit" class="btn primary">Salvar produto</button>
+            <button type="button" id="clearForm" class="btn outline">
+              Limpar
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Produtos</h2>
+          <span id="count" class="pill">0</span>
+        </div>
+
+        <ul id="productList" class="grid-list" aria-live="polite"></ul>
+      </section>
+
+      <footer class="app-footer">
+        <p>Feito com ❤️ — TeamTrack</p>
+      </footer>
+    </main>
+
+    <script>
+      // Loader rápido para demo: remove após DOM carregado ou substitua pela sua inicialização real
+      document.addEventListener("DOMContentLoaded", () => {
+        const loader = document.getElementById("loader");
+        const app = document.getElementById("app");
+        setTimeout(() => {
+          loader.classList.add("hidden");
+          loader.setAttribute("aria-hidden", "true");
+          app.classList.remove("hidden");
+        }, 800);
+      });
+    </script>
+
+    <script src="Classe Produto/produto.js"></script>
+    <script src="Classe Usuário/usuario.js"></script>
+    <script src="Classe Tarefa/tarefa.js"></script>
+    <script src="Classe principal que orquestra o sistema/gerenciador.js"></script>
+    <script src="Elemento visual/ui.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

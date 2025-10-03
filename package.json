@@ -1,0 +1,20 @@
+{
+  "name": "squad-project",
+  "version": "1.0.0",
+  "description": "Sistema de Gerenciamento de Usuários e Tarefas - Squad Project",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "start": "live-server"
+  },
+  "keywords": [
+    "squad",
+    "tarefas",
+    "usuarios",
+    "javascript",
+    "crud"
+  ],
+  "author": "Squad Dev",
+  "license": "MIT",
+  "dependencies": {}
+}
