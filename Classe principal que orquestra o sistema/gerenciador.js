@@ -47,4 +47,15 @@ export class Gerenciador {
     this.produtos = [];
     // Métodos de manipulação serão implementados futuramente por outra pessoa
   }
+
+  adicionarProduto(id, nome, quantidade, estoqueMinimo) {
+    // A classe Produto já faz as validações necessárias
+    const produto = new Produto(id, nome, quantidade, estoqueMinimo);
+    this.produtos.push(produto);
+    return produto;
+  }
+
+  listarProdutos() {
+    return this.produtos;
+  }
 }
