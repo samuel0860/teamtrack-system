@@ -3,98 +3,154 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Gestor de Estoque — TeamTrack</title>
+    <title>TeamTrack — Sistema de Estoque</title>
     <link rel="stylesheet" href="style.css" />
-    <!-- Google Font opcional -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
   </head>
   <body>
-    <!-- Loader -->
-    <div id="loader" aria-hidden="false">
-      <div class="spinner"></div>
-      <p>Carregando sistema...</p>
-    </div>
+    <header class="topbar">
+      <h1>TeamTrack — Controle de Estoque</h1>
+      <p class="subtitle">
+        Gerencie produtos, estoque e receba alertas quando o estoque estiver
+        baixo.
+      </p>
+    </header>
 
-    <!-- App -->
-    <main class="app container hidden" id="app" role="main">
-      <header class="app-header">
-        <div class="brand">
-          <h1>📦 TeamTrack</h1>
-          <p class="tagline">Gestor de Estoque com Alerta Inteligente</p>
-        </div>
+    <main class="main-grid">
+      <!-- Formulário de cadastro de produto -->
+      <section class="card">
+        <h2>Cadastrar Produto</h2>
+        <form id="formProduto">
+          <label
+            >Nome
+            <input
+              type="text"
+              id="inputNome"
+              placeholder="Ex: Parafuso 1/4"
+              required
+            />
+          </label>
 
-        <nav class="controls">
-          <button id="exportBtn" class="btn ghost">Exportar</button>
-          <button id="importBtn" class="btn ghost">Importar</button>
-        </nav>
-      </header>
+          <label
+            >Categoria
+            <input
+              type="text"
+              id="inputCategoria"
+              placeholder="Ex: Ferragens"
+            />
+          </label>
 
-      <section class="panel">
-        <form id="productForm" class="form-grid" aria-label="Adicionar produto">
-          <input
-            id="productName"
-            type="text"
-            placeholder="Nome do produto"
-            required
-          />
-          <input
-            id="productQty"
-            type="number"
-            placeholder="Quantidade"
-            required
-            min="0"
-          />
-          <input
-            id="productMin"
-            type="number"
-            placeholder="Estoque mínimo"
-            required
-            min="0"
-          />
-          <div class="form-actions">
-            <button type="submit" class="btn primary">Salvar produto</button>
-            <button type="button" id="clearForm" class="btn outline">
-              Limpar
+          <label
+            >Quantidade
+            <input
+              type="number"
+              id="inputQuantidade"
+              min="0"
+              value="0"
+              required
+            />
+          </label>
+
+          <label
+            >Preço (R$)
+            <input
+              type="number"
+              step="0.01"
+              id="inputPreco"
+              min="0"
+              value="0.00"
+            />
+          </label>
+
+          <label
+            >Alerta de estoque (limite)
+            <input type="number" id="inputLimite" min="0" value="5" />
+          </label>
+
+          <div class="actions">
+            <button type="submit" class="btn primary">Cadastrar</button>
+            <button type="button" id="btnLimpar" class="btn">
+              Limpar todos
             </button>
           </div>
         </form>
       </section>
 
-      <section class="panel">
-        <div class="panel-header">
-          <h2>Produtos</h2>
-          <span id="count" class="pill">0</span>
+      <!-- Lista de produtos -->
+      <section class="card wide">
+        <h2>Produtos Cadastrados</h2>
+        <div id="alertArea" class="alert-area" aria-live="polite"></div>
+
+        <table class="table" id="tabelaProdutos">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Categoria</th>
+              <th>Quantidade</th>
+              <th>Preço (R$)</th>
+              <th>Limite</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+
+        <!-- Ferramentas rápidas -->
+        <div class="tools">
+          <input
+            type="text"
+            id="busca"
+            placeholder="Buscar por nome ou categoria..."
+          />
+          <button id="btnMediaPreco" class="btn">Média de preço</button>
+          <span id="mediaPrecoText" class="note"></span>
         </div>
-
-        <ul id="productList" class="grid-list" aria-live="polite"></ul>
       </section>
-
-      <footer class="app-footer">
-        <p>Feito com ❤️ — TeamTrack</p>
-      </footer>
     </main>
 
-    <script>
-      // Loader rápido para demo: remove após DOM carregado ou substitua pela sua inicialização real
-      document.addEventListener("DOMContentLoaded", () => {
-        const loader = document.getElementById("loader");
-        const app = document.getElementById("app");
-        setTimeout(() => {
-          loader.classList.add("hidden");
-          loader.setAttribute("aria-hidden", "true");
-          app.classList.remove("hidden");
-        }, 800);
-      });
-    </script>
+    <footer class="footer">
+      <div>Desenvolvido pelo grupo 7</div>
+      <div class="small">Dados persistidos no localStorage do navegador</div>
+    </footer>
 
-    <script src="Classe Produto/produto.js"></script>
-    <script src="Classe Usuário/usuario.js"></script>
-    <script src="Classe Tarefa/tarefa.js"></script>
-    <script src="Classe principal que orquestra o sistema/gerenciador.js"></script>
-    <script src="Elemento visual/ui.js"></script>
-    <script src="js/main.js"></script>
+    <!-- incluímos como module para permitir import/export entre JS files -->
+    <script type="module" src="js/main.js"></script>
+
+    <!--Colaboradores -->
+    <footer class="footer">
+      <h3>💻 Equipe de Desenvolvimento</h3>
+      <div class="team-container">
+        <div class="team-member leader">
+          <span class="icon">👑</span>
+          <span class="name">Samuel da Silva Sales</span>
+          <span class="role">Líder</span>
+        </div>
+        <div class="team-member">
+          <span class="icon">🙋🏽‍♂️</span>
+          <span class="name">Lucas Alberto de Santana Santos</span>
+          <span class="role">Colaborador</span>
+        </div>
+        <div class="team-member">
+          <span class="icon">🙋🏽‍♀️</span>
+          <span class="name">Camilly Vitoria de Souza</span>
+          <span class="role">Colaboradora</span>
+        </div>
+        <div class="team-member">
+          <span class="icon">🙋🏽‍♀️</span>
+          <span class="name">Poliana Vitoria Leandro de Paula</span>
+          <span class="role">Colaboradora</span>
+        </div>
+        <div class="team-member">
+          <span class="icon">🙋🏽‍♀️</span>
+          <span class="name">Felícia Melany da Silva Cunha</span>
+          <span class="role">Colaboradora</span>
+        </div>
+        <div class="team-member">
+          <span class="icon">🙋🏽‍♂️</span>
+          <span class="name">Guilhermy Deveza da Silva</span>
+          <span class="role">Colaborador</span>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
