@@ -1,72 +1,91 @@
 # 📦 Gestor de Estoque com Alerta Inteligente
 
-## 🌟 Visão Geral
+## 📋 TeamTrack System
 
-O **Gestor de Estoque com Alerta Inteligente** é uma solução desenvolvida para pequenas e médias empresas que buscam otimizar a gestão de seus produtos. O sistema permite monitorar o estoque em tempo real, gerenciar produtos de forma eficiente e receber alertas automáticos quando os níveis mínimos de estoque são atingidos, evitando perdas financeiras e interrupções nas vendas.
+🌟 Visão Geral
+O TeamTrack System é uma aplicação desenvolvida para facilitar o gerenciamento de tarefas e equipes, oferecendo uma visão clara sobre o progresso de atividades dentro de um time.
+O sistema permite cadastrar usuários, criar e atribuir tarefas, acompanhar o status de execução e gerar relatórios simples de produtividade — tudo em um ambiente prático e colaborativo.
 
-> Este projeto foi desenvolvido como parte de um **trabalho em grupo** proposto pelo curso **PDA - Programadores do Amanhã**, com foco em práticas de programação, colaboração em equipe e aplicação de conceitos de orientação a objetos.
+Este projeto foi desenvolvido como parte de um trabalho em grupo proposto pelo curso PDA – Programadores do Amanhã, com foco em práticas de programação em equipe, colaboração com GitHub e aplicação de conceitos de orientação a objetos.
 
----
+🛑 Problema
 
-## 🛑 Problema
+Muitas equipes enfrentam dificuldades na organização e acompanhamento de tarefas diárias, o que pode gerar:
 
-Muitas pequenas lojas enfrentam dificuldades no controle de estoque, resultando em:
+❌ Falta de clareza sobre o que está sendo feito
+❌ Dificuldade na comunicação e divisão de responsabilidades
+❌ Atrasos em entregas por falta de acompanhamento
 
-- ❌ Produtos fora de estoque
-- ❌ Perda de vendas e receita
-- ❌ Dificuldade em planejar reposições
+O TeamTrack System foi criado para resolver esses problemas, fornecendo uma ferramenta simples e eficiente que melhora a gestão de tempo, produtividade e visibilidade das tarefas em andamento.
 
-O sistema foi desenvolvido para **mitigar esses problemas**, garantindo que o gestor tenha visibilidade completa sobre o inventário e possa tomar decisões rápidas e assertivas.
+🛠 Funcionalidades Principais
 
----
+🧾 Gerenciamento de Tarefas:
+Cada tarefa possui informações como título, descrição, responsável e status.
 
-## 🛠 Funcionalidades Principais
+⚙️ CRUD Completo:
+➕ Criar novas tarefas
+📋 Listar tarefas existentes
+✏️ Atualizar tarefas
+🗑 Remover tarefas
 
-- **Cadastro de Produtos**: cada produto possui atributos essenciais como `nome`, `quantidade` e `estoque mínimo`.
-- **CRUD completo de produtos**:
-  - ➕ Adicionar novos produtos
-  - 📋 Listar produtos cadastrados
-  - ✏️ Atualizar informações de produtos
-  - 🗑 Remover produtos do estoque
-- **Alerta Inteligente**: notificação automática quando a quantidade de um produto estiver abaixo do estoque mínimo definido. ⚠️
+👥 Gestão de Usuários:
+Permite cadastrar e gerenciar membros da equipe.
 
----
+📊 Acompanhamento de Status:
+Classificação das tarefas em pendente, em andamento e concluída, com visão geral do progresso.
 
-## 💡 Benefícios
+🔔 Notificações (em desenvolvimento):
+Alertas automáticos quando uma tarefa está atrasada ou sem responsável.
 
-- 💰 **Redução de prejuízos** devido à falta de produtos
-- ⏱ **Eficiência operacional**, com acompanhamento automático do estoque
-- 📊 **Decisões estratégicas** mais rápidas, baseadas em dados atualizados
-- 🤝 **Aprendizado em equipe**, aplicando conceitos de desenvolvimento de software colaborativo
+💡 Benefícios
 
----
+✅ Organização e controle centralizado das tarefas
+🤝 Melhoria na comunicação e colaboração da equipe
+📈 Aumento da produtividade e eficiência operacional
+🧠 Aplicação prática de conceitos de JavaScript, Node.js e orientação a objetos
+🚀 Experiência real de trabalho em equipe e versionamento com Git e GitHub
 
-## 💻 Tecnologias Utilizadas
+💻 Tecnologias Utilizadas
 
-- Linguagem de programação: **JavaScript / Node.js**
-- Arquitetura orientada a **classes**
-- Lógica de **CRUD e alertas automáticos**
+Linguagem: JavaScript / Node.js
 
----
+Framework: Express
 
-## 🚀 Como Executar o Projeto
+Banco de Dados: (Definir — MySQL / MongoDB / outro)
 
-1. Clone este repositório:
+Arquitetura: Orientada a objetos
 
-```bash
+Gerenciamento de código: Git & GitHub
+
+🚀 Como Executar o Projeto
+
+Clone este repositório:
+
 git clone https://github.com/samuel0860/teamtrack-system.git
-```
+cd teamtrack-system
+
+
+Instale as dependências:
+
+npm install
+
+
+Inicie o servidor:
+
+npm start
+
+
+Acesse no navegador:
+🌍 http://localhost:3000
 
 👥 Participantes
 
-Samuel da Silva Sales (Líder)
+👤 Samuel da Silva Sales (Líder)
+👤 Lucas Alberto de Santana Santos
+👤 Camilly Vitória de Souza
+👤 Poliana Vitória Leandro de Paula
+👤 Felícia Melany da Silva Cunha
+👤 Guilhermy Deveza da Silva
 
-Lucas Alberto de Santana Santos
-
-Camilly Vitoria de Souza
-
-Poliana Vitoria Leandro de Paula
-
-Felícia Melany da Silva Cunha
-
-Guilhermy Deveza da Silva
+🎯 O TeamTrack System é mais do que um projeto — é um exemplo de colaboração, aprendizado e evolução em equipe! 🚀
